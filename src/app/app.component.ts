@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+
+  logEvent = function($event) {
+    console.log('Click event: ', $event);
+  }
 }
