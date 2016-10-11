@@ -1,6 +1,7 @@
 import {Component, OnInit, Input, EventEmitter} from '@angular/core';
 import {Output} from "@angular/core/src/metadata/directives";
 import {BookDataService} from "../shared/book-data.service";
+import {Book} from "../book";
 
 @Component({
   selector: 'book-list',
@@ -12,13 +13,13 @@ export class BookListComponent implements OnInit {
   isHidden: boolean = false;
   mouseX: number = null;
   mouseY: number;
-  books: any[];
+  books: Book[];
   newBook = {};
 
   @Input() title: string;
   @Output() bookTitleClicked: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private bookDataService: BookDataService) {
+  constructor(private bookDataService:BookDataService) {
   }
 
   ngOnInit() {
@@ -46,7 +47,8 @@ export class BookListComponent implements OnInit {
     this.bookTitleClicked.emit('Hallo!');
   }
 
-  addBook(book) {
+  addBook(book:Book) {
+    book.abstract = 'interface test';
     this.bookDataService.addBook(book)
       .subscribe(()=>this.loadBooks());
   }
