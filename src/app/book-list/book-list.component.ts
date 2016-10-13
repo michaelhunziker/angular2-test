@@ -1,6 +1,6 @@
 import {Component, OnInit, Input, EventEmitter} from '@angular/core';
 import {BookDataService} from "../shared/book-data.service";
-import {Book} from "../book";
+import {Book} from "../shared/book.model";
 
 @Component({
   selector: 'book-list',

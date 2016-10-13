@@ -1,5 +1,5 @@
-import {Component, OnInit, Input, EventEmitter} from '@angular/core';
-import {Book} from "../../book";
+import {Component, Input, EventEmitter} from '@angular/core';
+import {Book} from "../../shared/book.model";
 import {Output} from "@angular/core/src/metadata/directives";
 
 @Component({
