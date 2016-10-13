@@ -8,7 +8,8 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BookDataService } from "./shared/book-data.service";
 import { BookEditComponent } from './book-edit/book-edit.component';
 import { AppRouterModules } from "./app.routes";
-import {AuthService} from "./shared/auth.service";
+import { AuthService } from "./shared/auth.service";
+import { BookListEntryComponent } from './book-list/book-list-entry/book-list-entry.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import {AuthService} from "./shared/auth.service";
 
     // TODO: The following components should be extracted to modules
     BookListComponent,
+    BookListEntryComponent,
     BookEditComponent
+
   ],
   imports: [
     BrowserModule,

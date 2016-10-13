@@ -1,5 +1,4 @@
 import {Component, OnInit, Input, EventEmitter} from '@angular/core';
-import {Output} from "@angular/core/src/metadata/directives";
 import {BookDataService} from "../shared/book-data.service";
 import {Book} from "../book";
 
@@ -10,16 +9,10 @@ import {Book} from "../book";
 })
 export class BookListComponent implements OnInit {
 
-  isHidden: boolean = false;
-  mouseX: number = null;
-  mouseY: number;
   books: Book[];
   newBook = {};
 
-  @Input() title: string;
-  @Output() bookTitleClicked: EventEmitter<string> = new EventEmitter<string>();
-
-  constructor(private bookDataService:BookDataService) {
+  constructor(private bookDataService: BookDataService) {
   }
 
   ngOnInit() {
@@ -32,25 +25,13 @@ export class BookListComponent implements OnInit {
       .subscribe(books=> this.books = books);
   }
 
-
-  toggleBox() {
-    this.isHidden = !this.isHidden;
-  }
-
-  mouseMove({clientX, clientY}: MouseEvent) {
-    this.mouseX = clientX;
-    this.mouseY = clientY;
-  }
-
-  onTitleClicked() {
-    console.log('clicked');
-    this.bookTitleClicked.emit('Hallo!');
-  }
-
-  addBook(book:Book) {
-    book.abstract = 'interface test';
+  addBook(book: Book) {
     this.bookDataService.addBook(book)
       .subscribe(()=>this.loadBooks());
+  }
+
+  onBookTitleClick($event) {
+    console.log('Book was clicked within list: ', $event)
   }
 
 }

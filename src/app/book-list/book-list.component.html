@@ -1,20 +1,4 @@
-<!--<div-->
-  <!--(mousemove)="mouseMove($event)"-->
-  <!--class="info-box"-->
-  <!--[hidden]="isHidden">-->
-  <!--Info Box-->
-<!--</div>-->
-
-<!--<div>-->
-  <!--<p>X: {{mouseX}}</p>-->
-  <!--<p>Y: {{mouseY}}</p>-->
-<!--</div>-->
-
-<!--<button (click)="toggleBox()">-->
-  <!--Test-->
-<!--</button>-->
-
-<h2 (click)="onTitleClicked()">
+<h2 (click)="onBookClicked()">
   {{title}}
 </h2>
 
@@ -22,7 +6,9 @@ Title: <input type="text" [(ngModel)]="newBook.title">
 ISBN: <input type="text" [(ngModel)]="newBook.isbn">
 <button (click)="addBook(newBook)">Add book</button>
 
-<div *ngFor="let book of books">
-  <h3><a [routerLink]="['/book-edit',book.isbn]">{{book.title}}</a></h3>
-  ISBN: {{book.isbn}}
-</div>
+
+<book-list-entry
+  *ngFor="let book of books"
+  [book]="book"
+  (bookTitleClick)="onBookTitleClick($event)">
+</book-list-entry>
