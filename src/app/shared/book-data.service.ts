@@ -17,7 +17,6 @@ export class BookDataService {
   }
 
   getBooks():Observable<Book[]>{
-
     return this.http
       .get(this.url)
       .map((res: Response) => res.json() || {})
@@ -26,18 +25,6 @@ export class BookDataService {
         return Observable.throw(error.message)
       });
 
-    // return [
-    //   {
-    //     title: "Buch 1",
-    //     isbn: "123",
-    //     author: "Michi"
-    //   },
-    //   {
-    //     title: "Buch 2",
-    //     isbn: "567",
-    //     author: "Hans"
-    //   }
-    // ]
   }
 
 }
