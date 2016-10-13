@@ -10,5 +10,8 @@ ISBN: <input type="text" [(ngModel)]="newBook.isbn">
 <book-list-entry
   *ngFor="let book of books"
   [book]="book"
-  (bookTitleClick)="onBookTitleClick($event)">
+  (addToFavorites)="onAddToFavorites($event)">
 </book-list-entry>
+
+
+Favoriten: {{favorites | json}}

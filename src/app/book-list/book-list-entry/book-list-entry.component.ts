@@ -13,12 +13,12 @@ export class BookListEntryComponent {
   book: Book;
 
   @Output()
-  bookTitleClick: EventEmitter<string> = new EventEmitter<string>();
+  addToFavorites: EventEmitter<Book> = new EventEmitter<Book>();
 
   constructor() { }
 
-  onBookTitleClicked($event) {
-    this.bookTitleClick.emit($event);
+  addBookToFavorites() {
+    this.addToFavorites.emit(this.book);
   }
 
 

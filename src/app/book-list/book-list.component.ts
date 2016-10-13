@@ -10,6 +10,7 @@ import {Book} from "../book";
 export class BookListComponent implements OnInit {
 
   books: Book[];
+  favorites: Book[] = [];
   newBook = {};
 
   constructor(private bookDataService: BookDataService) {
@@ -30,8 +31,8 @@ export class BookListComponent implements OnInit {
       .subscribe(()=>this.loadBooks());
   }
 
-  onBookTitleClick($event) {
-    console.log('Book was clicked within list: ', $event)
+  onAddToFavorites($event) {
+    this.favorites.push($event);
   }
 
 }
