@@ -10,6 +10,7 @@ import { BookEditComponent } from './book-edit/book-edit.component';
 import { AppRouterModules } from "./app.routes";
 import { AuthService } from "./shared/auth.service";
 import { BookListEntryComponent } from './book-list/book-list-entry/book-list-entry.component';
+import {FavoritesComponent} from "./favorites/favorites.component";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BookListEntryComponent } from './book-list/book-list-entry/book-list-en
     // TODO: The following components should be extracted to modules
     BookListComponent,
     BookListEntryComponent,
-    BookEditComponent
+    BookEditComponent,
+    FavoritesComponent
 
   ],
   imports: [

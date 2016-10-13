@@ -1,0 +1,8 @@
+<div *ngIf="favorites && favorites.length > 0">
+  <h3>Favoriten</h3>
+  <ul>
+    <li *ngFor="let favorite of favorites">
+      {{favorite.title}}
+    </li>
+  </ul>
+</div>

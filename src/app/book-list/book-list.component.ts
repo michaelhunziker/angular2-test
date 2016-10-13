@@ -3,7 +3,7 @@ import {BookDataService} from "../shared/book-data.service";
 import {Book} from "../shared/book.model";
 
 @Component({
-  selector: 'book-list',
+  selector: 'ba-book-list',
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.css']
 })
@@ -27,7 +27,8 @@ export class BookListComponent implements OnInit {
   }
 
   addBook(book: Book) {
-    this.bookDataService.addBook(book)
+    this.bookDataService
+      .addBook(book)
       .subscribe(()=>this.loadBooks());
   }
 

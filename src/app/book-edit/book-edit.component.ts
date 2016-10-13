@@ -3,7 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {AuthService} from "../shared/auth.service";
 
 @Component({
-  selector: 'book-edit',
+  selector: 'ba-book-edit',
   templateUrl: './book-edit.component.html',
   styleUrls: ['./book-edit.component.css']
 })

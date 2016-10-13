@@ -4,14 +4,13 @@
 
 Title: <input type="text" [(ngModel)]="newBook.title">
 ISBN: <input type="text" [(ngModel)]="newBook.isbn">
+
 <button (click)="addBook(newBook)">Add book</button>
 
-
-<book-list-entry
+<ba-book-list-entry
   *ngFor="let book of books"
   [book]="book"
   (addToFavorites)="onAddToFavorites($event)">
-</book-list-entry>
+</ba-book-list-entry>
 
-
-Favoriten: {{favorites | json}}
+<ba-favorites [favorites]="favorites"></ba-favorites>
