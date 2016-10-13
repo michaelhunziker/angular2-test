@@ -5,19 +5,26 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { BookListComponent } from './book-list/book-list.component';
-import {BookDataService} from "./shared/book-data.service";
+import { BookDataService } from "./shared/book-data.service";
+import { BookEditComponent } from './book-edit/book-edit.component';
+import { AppRouterModules } from "./app.routes";
+import {AuthService} from "./shared/auth.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookListComponent
+
+    // TODO: The following components should be extracted to modules
+    BookListComponent,
+    BookEditComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRouterModules
   ],
-  providers: [BookDataService],
+  providers: [BookDataService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
